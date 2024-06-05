@@ -6,18 +6,29 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <title>Chris Sykora</title>
   <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
     body.fade {
       opacity: 0;
       transition: none;
     }
-    html,
-    body {
+    html, body {
       background-color: black;
       width: 100%;
       font-family: 'Roboto', sans-serif;
       text-align: center;
       opacity: 1;
       transition: 0.5s opacity;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
     }
     h1, h2, h3 {
       padding: 0 3vw;
@@ -27,7 +38,7 @@
     p {
       direction: rtl;
       text-align: justify;
-      text-align-last: right; /* Ensure the last line is right-aligned */
+      text-align-last: right;
       padding-right: 3vw; 
       padding-left: 35vw; 
       padding-top: 10vh;
@@ -104,7 +115,7 @@
       background-color: white;
       padding-top: 10vh;
       color: #000;
-      text-align: left;
+      text-align: right;
       height: 100%;
     }
     .work-header {
@@ -143,7 +154,7 @@
       background: black;
       color: white;
     }
-    .cv a:hover {
+    .cv:hover {
       color: grey;
     }
     @media only screen and (max-width: 800px) {
@@ -184,6 +195,10 @@
 <body>
   <script>
     document.body.classList.add('fade');
+    window.addEventListener('load', () => {
+      document.body.classList.remove('fade');
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('fade-in'));
+    });
   </script>
   <nav>
     <ul id='navbar'>
@@ -194,75 +209,49 @@
   </nav>
   <div id="body">
     <!--INTRO-->
-    <div id="who" class="top-screen">
+    <div id="who" class="top-screen fade-in">
       <h1 class="top-header">Chris Sykora</h1>
       <span class="square_1"></span>
       <br>
-      <div class="info hideme">Senior Producer<br>SCRUM Certified<br>Collaborative<br>Creative</div>
+      <div class="info hideme fade-in">Senior Producer<br>SCRUM Certified<br>Collaborative<br>Creative</div>
     </div>
     <!--EXPERIENCE-->
-    <div id="what" class="work">
+    <div id="what" class="work fade-in">
       <h1 class="work-header">Experience</h1>
       <br>
       <span class="square_2"></span>
-      <br>
-      <br>
-      <p>
-        I am a Senior Producer that loves every facet of gaming, from culture to business. With over 5 years of experience, I lead with empathy, enthusiasm, pragmatism, and a composed demeanor. My passion lies in fostering strong teams to deliver exceptional player experiences.
-      </p>
       <br><br>
-      Titles I've helped ship and had the pleasure of working on: World of Warships: Blitz, The Cycle, The Cycle: Frontier, Dune: Awakening, Exoborne.
-      <br><br>
-      <a href="https://drive.google.com/file/d/1qRhJ2bw-Y_9fkcPffoygjxdCRdv9wdPZ/view?usp=sharing" class="cv" target="_blank">Download my CV</a>
-      <br><br>
-      <div class="jobs">
-        <span class="business-name">YAGER</span><br>
+      <p>I am a Senior Producer that loves every facet of gaming, from culture to business. With over 5 years of experience, I lead with empathy, enthusiasm, pragmatism, and a composed demeanor. My passion lies in fostering strong teams to deliver exceptional player experiences.</p>
+      <p>Titles I've helped ship and had the pleasure of working on: World of Warships: Blitz, The Cycle, The Cycle: Frontier, Dune: Awakening, Exoborne</p>
+      <p><a href="https://drive.google.com/file/d/1qRhJ2bw-Y_9fkcPffoygjxdCRdv9wdPZ/view?usp=sharing" class="cv" target="_blank" rel="noopener noreferrer">Download my CV</a></p>
+      <div class="jobs fade-in">
+        <p><a class="business-name">YAGER</a><br>
         Senior Producer / 2023 - Present<br>
         Producer / 2021-2023<br>
         Associate Producer / 2019-2021<br>
         Berlin, Germany<br><br>
-        <span class="business-name">Wargaming</span><br>
+        <a class="business-name">Wargaming</a><br>
         Project Manager / 2017-2018<br>
         Nicosia, Cyprus<br><br>
-        <span class="business-name">Epsilon</span><br>
+        <a class="business-name">Epsilon</a><br>
         Project Manager / 2016-2017<br>
         San Francisco, CA<br><br>
-        <span class="business-name">Accenture</span><br>
+        <a class="business-name">Accenture</a><br>
         Digital Project Manager / 2014-2016<br>
         San Francisco, CA<br><br>
-        <span class="business-name">Oracle</span><br>
-        Production Lead / 2012 - 2015 <br>
+        <a class="business-name">Oracle</a><br>
+        Production Lead / 2012 - 2015<br>
         San Francisco, CA<br><br>
-        <span class="business-name">Anatomage</span><br>
+        <a class="business-name">Anatomage</a><br>
         Production Lead / 2010-2012<br>
-        San Jose, CA <br><br>
-        <span class="business-name">Podcasts</span><br>
-        <a class="link-style" href="https://evolutionjobs.com/exchange/evo-gaming-164-guiding-game-development-as-a-leader/?preview=true&_thumbnail_id=21937" target="_blank">Guiding Game Development As A Leader</a><br>
-        <a class="link-style" href="https://youtu.be/ktWeNvnLIoA" target="_blank">The Cycle: Frontier Closed Beta 1</a><br>
-        <a class="link-style" href="https://youtu.be/_A9aSZ5aQHM" target="_blank">The Cycle: Frontier Closed Beta 2</a><br>
-        <a class="link-style" href="https://www.game-production.com/podcast/episode/4b06ed2e/24-game-production-interviews-chris-sykora-associate-producer-at-yager" target="_blank">Game Production Podcast</a><br><br>
-      </div>
-    </div>
-    <!--CONTACT-->
-    <div id="where" class="contact smooth">
-      <div class="contact-header">
-        <h1>Contact</h1>
-        <span class="square_1"></span>
-        <br>
-        <div class="info">
-          <a href="mailto:csykora@gmail.com">csykora@gmail.com</a><br>
-          <a href="tel:+491775059608">+49.177.505.9608</a><br>
-          <a href="https://www.linkedin.com/in/chris-sykora-53b9baa/" target="_blank">LinkedIn</a>
-          <br><br>
-          <p style="font-size: 15px;">&copy; Created by myself</p>
-        </div>
+        San Jose, CA<br><br>
+        <a class="business-name">Podcasts</a><br>
+        <a class="link-style" href="https://evolutionjobs.com/exchange/evo-gaming-164-guiding-game-development-as-a-leader/?preview=true&_thumbnail_id=21937" target="_blank" rel="noopener noreferrer">Guiding Game Development As A Leader</a><br>
+        <a class="link-style" href="https://youtu.be/ktWeNvnLIoA" target="_blank" rel="noopener noreferrer">The Cycle: Frontier Closed Beta 1</a><br>
+        <a class="link-style" href="https://youtu.be/_A9aSZ5aQHM" target="_blank" rel="noopener noreferrer">The Cycle: Frontier Closed Beta 2</a><br>
+        <a class="link-style" href="https://www.game-production.com/podcast/episode/4b06ed2e/24-game-production-interviews-chris-sykora-ass
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.body.classList.remove('fade');
-    });
-  </script>
 </body>
 </html>
