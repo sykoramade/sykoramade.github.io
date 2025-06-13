@@ -39,7 +39,7 @@ p{
 .info {
   font-size: .7em; 
   text-align: left; 
-  color-white; 
+  color: white; 
   padding-top: 10vh; 
   padding-left: 3vw; 
   padding-bottom: 10vh;
@@ -87,6 +87,7 @@ nav ul {
   position: fixed;
   width: 100%;
   background-color: #000000;
+  z-index: 1000;
 }
 
 nav li {
@@ -105,6 +106,8 @@ nav ul li a {
 nav ul li a:hover {
   color: grey;
 }
+
+/* New Experience Carousel Styles */
 .work {
   background-color: white;
   padding-top: 10vh;
@@ -112,9 +115,172 @@ nav ul li a:hover {
   text-align: left;
   height: 100%;
 }
+
 .work-header {
-  font-size: 7em
+  font-size: 7em;
+  color: #000;
+  text-align: left;
+  margin-bottom: 5vh;
 }
+
+.experience-carousel {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  height: 100%;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.carousel-container:active {
+  cursor: grabbing;
+}
+
+.carousel-container.dragging {
+  animation: none;
+  transition: none;
+}
+
+.experience-slide {
+  min-width: 600px;
+  height: 100%;
+  display: flex;
+  border: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 20px 0;
+}
+
+.experience-slide.yager-slide {
+  min-width: 1100px;
+}
+
+.slide-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  gap: 0;
+  box-sizing: border-box;
+}
+
+.slide-info {
+  flex: 0 0 200px;
+  padding: 15px; 
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: right;
+  border-right: 1px solid #000;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+  margin: 15px 0;
+}
+
+.slide-media {
+  flex: 0 0 300px;
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  box-sizing: border-box;
+  height: calc(100% - 30px);
+}
+
+.slide-media.multi-media {
+  flex: 0 0 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  height: calc(100% - 30px);
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.media-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-item img,
+.media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.media-item:hover img,
+.media-item:hover video {
+  transform: scale(1.05);
+}
+
+.media-item .media-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.company-name {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+  font-family: roboto, sans-serif;
+}
+
+.role-title {
+  font-size: 1em;
+  color: #000;
+  margin-bottom: 5px;
+  font-family: roboto, sans-serif;
+}
+
+.years {
+  font-size: 1em;
+  color: #000;
+  margin-bottom: 10px;
+  font-family: roboto, sans-serif;
+}
+
+.location {
+  font-size: 1em;
+  color: #000;
+  margin-bottom: 20px;
+  font-family: roboto, sans-serif;
+}
+
+.projects-list {
+  font-size: 0.9em;
+  color: #000;
+  line-height: 1.4;
+  font-family: roboto, sans-serif;
+}
+
+.projects-list strong {
+  color: #000;
+}
+
+
+
 .contact {
   background: #000;
   color: white;
@@ -156,6 +322,7 @@ nav ul li a:hover {
   .cv a:hover {
       color: grey;
     }
+
 @media only screen and (max-width: 800px) {
   h1 {
     font-size: 3.5rem;
@@ -187,6 +354,30 @@ nav ul li a:hover {
 }
   .business-name {
     font-size: 1.5em;
+  }
+  
+  /* Mobile Carousel Styles */
+  .experience-carousel {
+    height: 40vh;
+  }
+  
+  .experience-slide {
+    flex-direction: column;
+  }
+  
+  .slide-info {
+    flex: 0 0 auto;
+    padding: 20px;
+    border-left: none;
+    border-top: 1px solid #000;
+  }
+  
+  .company-name {
+    font-size: 1.8em;
+  }
+  
+  .role-title {
+    font-size: 1.1em;
   }
 }
 </style>
@@ -221,46 +412,194 @@ nav ul li a:hover {
 </div>
   
   
-  <!--EXPERIENCE-->
+  <!--EXPERIENCE CAROUSEL-->
 <div id="what" class="work">
   <h1 class="work-header">.Experience.</h1>
-  <br>
-  <span class="square_2"></span>
-<br>
-  <br>
-  <a>
-    <p>Experienced Senior Producer with 6+ years spanning the entire dev/prod lifecycle and co-development, specializing in global game development, leading international teams creating diverse F2P AA and AAA PC, console, and mobile titles. Skilled in agile methodologies, servant leadership, and strategic planning. Demonstrated success in project coordination and data-driven optimizations, with a background in project management scaling production and my impact as a leader
-</a><br><br> 
-      Projects: Star Trek Online (PC), World of Warships: Blitz (iOS, Android), The Cycle (PC), The Cycle: Frontier (PC), Dune: Awakening (PC), Exoborne (PC, PS5, Xbox), Unannounced project (PC, PS5, Xbox)<br><br>
-      <a href="https://drive.google.com/file/d/14MAbLWBGih2trDZ8nmX8NyllKT7OucPk/view?usp=sharing" class="cv" target=”_blank”>Download CV</a><br><br>
-      <div class="jobs"> <a class="business-name">YAGER</a><br>
-      Senior Producer / 2023 - Present<br>
-      Producer / 2021-2023<br>
-      Associate Producer / 2019-2021<br>
-      Berlin, Germany<br><br>
-      <a class="business-name">Wargaming</a><br>
-      Project Manager / 2017-2018<br>
-      Nicosia, Cyprus<br>
-      Shanghai, China<br><br>
-      <a class="business-name">Epsilon</a><br>
-      Project Manager / 2016-2017<br>
-      San Francisco, CA<br><br>
-      <a class="business-name">Accenture</a><br>
-      Digital Project Manager / 2014-2016<br>
-      San Francisco, CA<br><br>
-      <a class="business-name">Oracle</a><br>
-Production Lead / 2012 - 2015 <br>
-       San Francisco, CA<br><br>
-      <a class="business-name">Cryptic</a><br>
-      Development QA / 2011-2012<br>
-        Los Gatos, CA <br><br>
-      <a class="business-name">Podcasts</a><br>
-      <a class="link-style" href="https://evolutionjobs.com/exchange/evo-gaming-164-guiding-game-development-as-a-leader/?preview=true&_thumbnail_id=21937" target=”_blank”>Guiding Game Development As A Leader</a><br>
-      <a class="link-style" href="https://youtu.be/ktWeNvnLIoA" target=”_blank”>The Cycle: Frontier Closed Beta 1</a><br>
-      <a class="link-style" href="https://youtu.be/_A9aSZ5aQHM" target=”_blank”>The Cycle: Frontier Closed Beta 2</a><br>
-      <a class="link-style" href="https://www.game-production.com/podcast/episode/4b06ed2e/24-game-production-interviews-chris-sykora-associate-producer-at-yager" target=”_blank”>Game Production Podcast</a><br><br></div>
+  
+  <div class="experience-carousel">
+    <div class="carousel-container" id="carouselContainer">
+      
+      <!-- First set of slides -->
+      <!-- Klang Slide -->
+      <div class="experience-slide">
+        <div class="slide-content">
+          <div class="slide-info">
+            <div class="company-name">Klang</div>
+            <div class="role-title">Producer</div>
+            <div class="years">2025 - Present</div>
+            <div class="location">Berlin, Germany</div>
+            <div class="projects-list">
+              <strong>Projects:</strong><br>
+              Seed (PC)<br><br>
+            </div>
+          </div>
+          <div class="slide-media">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop" alt="Klang Games">
+            <div class="media-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Abstraction Slide -->
+            <div class="experience-slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <div class="company-name">Abstraction</div>
+                  <div class="role-title">Senior Technical Producer</div>
+                  <div class="years">2025</div>
+                  <div class="location">Berlin, Germany</div>
+                  <div class="projects-list">
+                    <strong>Project:</strong><br>
+                    Dune: Awakening (PC)<br><br>
+                  </div>
+                </div>
+                <div class="slide-media">
+                  <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop" alt="Abstraction">
+                  <div class="media-overlay"></div>
+                </div>
+              </div>
+            </div>
+
+      <!-- YAGER Slide -->
+      <div class="experience-slide yager-slide">
+        <div class="slide-content">
+          <div class="slide-info">
+            <div class="company-name">YAGER</div>
+            <div class="role-title">Senior Producer</div>
+            <div class="years">2019 - 2025</div>
+            <div class="location">Berlin, Germany</div>
+            <div class="projects-list">
+              <strong>Projects:</strong><br>
+              The Cycle: Frontier (PC)<br>
+              Dune: Awakening (PC)<br>
+              Exoborne (PC, PS5, Xbox)<br>
+              Unannounced AA Project
+            </div>
+          </div>
+          <div class="slide-media multi-media">
+            <div class="media-item">
+              <img src="https://www.hardwareluxx.de/images/cdn02/uploads/2023/Jun/slick_automation_j2/yager_the-cycle-frontier_001_1920px.jpg?w=800&h=600&fit=crop" alt="The Cycle: Frontier">
+              <div class="media-overlay"></div>
+            </div>
+            <div class="media-item">
+              <img src="https://www.gematsu.com/wp-content/uploads/2024/03/Dune-Awakening_2024_03-04-24_001.jpg?w=800&h=600&fit=crop" alt="Dune: Awakening">
+              <div class="media-overlay"></div>
+            </div>
+            <div class="media-item">
+              <img src="https://images.mein-mmo.de/medien/2024/08/Exoborne-2-780x438.jpg?w=800&h=600&fit=crop" alt="Exoborne">
+              <div class="media-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wargaming Slide -->
+      <div class="experience-slide">
+        <div class="slide-content">
+          <div class="slide-info">
+            <div class="company-name">Wargaming</div>
+            <div class="role-title">Project Manager</div>
+            <div class="years">2017 - 2018</div>
+            <div class="location">Nicosia, Cyprus<br>Shanghai, China</div>
+            <div class="projects-list">
+              <strong>Projects:</strong><br>
+              World of Warships: Blitz<br>
+              (iOS, Android)<br><br>
+            </div>
+          </div>
+          <div class="slide-media">
+            <img src="https://cdnb.artstation.com/p/assets/images/images/065/069/717/large/gorkem-mansiz-wowsb-artwork-siegfried-t9-de-ca.jpg?1689436390?w=800&h=600&fit=crop" alt="World of Warships: Blitz">
+            <div class="media-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Epsilon Slide -->
+      <div class="experience-slide">
+        <div class="slide-content">
+          <div class="slide-info">
+            <div class="company-name">Epsilon</div>
+            <div class="role-title">Project Manager</div>
+            <div class="years">2016 - 2017</div>
+            <div class="location">San Francisco, CA</div>
+            <div class="projects-list">
+            </div>
+          </div>
+          <div class="slide-media">
+            <img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_996adb4731a45f3461bfc8e9e8caa1fb/epsilon-marketing-services.jpeg?w=800&h=600&fit=crop" alt="Epsilon">
+            <div class="media-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accenture Slide -->
+      <div class="experience-slide">
+        <div class="slide-content">
+          <div class="slide-info">
+            <div class="company-name">Accenture</div>
+            <div class="role-title">Digital Project Manager</div>
+            <div class="years">2014 - 2016</div>
+            <div class="location">San Francisco, CA</div>
+            <div class="projects-list">
+
+            </div>
+          </div>
+          <div class="slide-media">
+            <img src="https://ik.imagekit.io/tp/20220201-accenture-logo.png?w=800&h=600&fit=crop" alt="Accenture">
+            <div class="media-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oracle Slide -->
+      <div class="experience-slide">
+        <div class="slide-content">
+          <div class="slide-info">
+            <div class="company-name">Oracle</div>
+            <div class="role-title">Production Lead</div>
+            <div class="years">2012 - 2015</div>
+            <div class="location">San Francisco, CA</div>
+            <div class="projects-list">
+            </div>
+          </div>
+          <div class="slide-media">
+            <img src="https://datascientest.com/de/files/2023/06/Oracle-Embleme-scaled-1.webp?w=800&h=600&fit=crop" alt="Oracle">
+            <div class="media-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cryptic Slide -->
+      <div class="experience-slide">
+        <div class="slide-content">
+          <div class="slide-info">
+            <div class="company-name">Cryptic</div>
+            <div class="role-title">Development QA</div>
+            <div class="years">2011 - 2012</div>
+            <div class="location">Los Gatos, CA</div>
+            <div class="projects-list">
+              <strong>Projects:</strong><br>
+              Star Trek Online (PC)<br><br>
+            </div>
+          </div>
+          <div class="slide-media">
+            <img src="https://cdn.mos.cms.futurecdn.net/gYnzA8fuBmqjf2XceoSXX8.jpeg?w=800&h=600&fit=crop" alt="Cryptic Studios">
+            <div class="media-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
   </div>
+  
+  <!-- CV Download Section -->
+  <div style="text-align: center; margin-top: 5vh;">
+    <a href="https://drive.google.com/file/d/14MAbLWBGih2trDZ8nmX8NyllKT7OucPk/view?usp=sharing" class="cv" target="_blank">Download CV</a>
   </div>
+</div>
+
   <!--CONTACT-->
 <div id="where" class="contact smooth">
   <div class="contact-header">
@@ -270,7 +609,7 @@ Production Lead / 2012 - 2015 <br>
     <div class="info">
       <a href="mailto:csykora@gmail.com">csykora@gmail.com</a><br>
       <a href="tel:+491775059608">+49.177.505.9608</a><br>
-      <a href="https://www.linkedin.com/in/chris-sykora-53b9baa/" target=”_blank”>LinkedIn</a>
+      <a href="https://www.linkedin.com/in/chris-sykora-53b9baa/" target="_blank">LinkedIn</a>
     <br><br>
       <p style="font-size: 15px;">&copy; Created by myself</p>
     </div>
@@ -278,9 +617,154 @@ Production Lead / 2012 - 2015 <br>
  
 </div>
   </div>
+  
   <script>
   document.addEventListener("DOMContentLoaded", function(e) {
     document.body.classList.remove('fade');
+    
+    // Reverse scrolling carousel - stops at ends and reverses direction
+    const carousel = document.getElementById('carouselContainer');
+    const slides = carousel.querySelectorAll('.experience-slide');
+    const totalSlides = slides.length;
+    const maxPosition = 0; // Start position (YAGER)
+    
+    // Calculate total width of all slides
+    let totalWidth = 0;
+    slides.forEach(slide => {
+      totalWidth += slide.offsetWidth + 20; // Include margin
+    });
+    const minPosition = -(totalWidth - window.innerWidth); // Stop when last slide edge reaches viewport edge
+    
+    let position = 0;
+    let isDragging = false;
+    let velocity = 0;
+    let lastX = 0;
+    let lastTime = 0;
+    let autoScrollId = null;
+    let pauseTimeout = null;
+    let scrollDirection = -1; // -1 = left (forward), 1 = right (backward)
+    
+    // Boundary checking - prevent scrolling beyond edges
+    function checkBoundaries() {
+      if (position < minPosition) {
+        position = minPosition;
+        scrollDirection = 1; // Reverse to go back
+      }
+      if (position > maxPosition) {
+        position = maxPosition;
+        scrollDirection = -1; // Reverse to go forward
+      }
+    }
+    
+    function autoScroll() {
+      if (!isDragging) {
+        position += (0.8 * scrollDirection);
+        checkBoundaries();
+        carousel.style.transform = `translateX(${position}px)`;
+        autoScrollId = requestAnimationFrame(autoScroll);
+      }
+    }
+    
+    function startAutoScroll() {
+      if (autoScrollId) cancelAnimationFrame(autoScrollId);
+      autoScroll();
+    }
+    
+    function stopAutoScroll() {
+      if (autoScrollId) {
+        cancelAnimationFrame(autoScrollId);
+        autoScrollId = null;
+      }
+      clearTimeout(pauseTimeout);
+    }
+    
+    function momentum(initialVelocity) {
+      let vel = initialVelocity;
+      function animate() {
+        if (Math.abs(vel) > 0.3) {
+          position += vel;
+          checkBoundaries();
+          carousel.style.transform = `translateX(${position}px)`;
+          vel *= 0.97;
+          requestAnimationFrame(animate);
+        } else {
+          pauseTimeout = setTimeout(() => {
+            if (!isDragging) startAutoScroll();
+          }, 2000);
+        }
+      }
+      animate();
+    }
+    
+    function dragStart(e) {
+      isDragging = true;
+      stopAutoScroll();
+      carousel.classList.add('dragging');
+      
+      const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+      lastX = clientX;
+      lastTime = Date.now();
+      velocity = 0;
+      
+      e.preventDefault();
+    }
+    
+    function dragMove(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      
+      const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+      const currentTime = Date.now();
+      const deltaX = clientX - lastX;
+      
+      position += deltaX;
+      checkBoundaries();
+      carousel.style.transform = `translateX(${position}px)`;
+      
+      if (currentTime - lastTime > 0) {
+        velocity = deltaX / (currentTime - lastTime) * 25;
+      }
+      
+      lastX = clientX;
+      lastTime = currentTime;
+    }
+    
+    function dragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      carousel.classList.remove('dragging');
+      
+      if (Math.abs(velocity) > 1) {
+        momentum(velocity);
+      } else {
+        pauseTimeout = setTimeout(() => {
+          if (!isDragging) startAutoScroll();
+        }, 2000);
+      }
+    }
+    
+    startAutoScroll();
+    
+    // Mouse events
+    carousel.addEventListener('mousedown', dragStart);
+    document.addEventListener('mousemove', dragMove);
+    document.addEventListener('mouseup', dragEnd);
+    
+    // Touch events
+    carousel.addEventListener('touchstart', dragStart, { passive: false });
+    document.addEventListener('touchmove', dragMove, { passive: false });
+    document.addEventListener('touchend', dragEnd);
+    
+    // Prevent default behaviors
+    carousel.addEventListener('contextmenu', e => e.preventDefault());
+    carousel.addEventListener('selectstart', e => e.preventDefault());
+    carousel.addEventListener('dragstart', e => e.preventDefault());
+    
+    // Prevent text selection
+    carousel.style.webkitUserSelect = 'none';
+    carousel.style.mozUserSelect = 'none';
+    carousel.style.msUserSelect = 'none';
+    carousel.style.userSelect = 'none';
   });
 </script>
 </body>
