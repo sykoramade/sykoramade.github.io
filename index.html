@@ -1,292 +1,372 @@
 <!doctype html>
-<html>
-  
-<style>
-
-body.fade {
-    opacity: 0;
-    transition: none;
-}
-  
-html,
-body {
-  background-color: black;
-  width: 100%;
-  font-family: roboto, sans-serif;
-  text-align: center;
-  opacity: 1;
-  transition: 0.5s opacity;
-}
-h1, h2, h3 {
-  padding:0 3vw;
-  opacity: 1;
-  transition: 1s opacity;
-}
-
-p{
-  direction: rtl;
-  text-align: justify;
-  padding-right: 3vw; 
-  padding-left: 35vw; 
-  padding-top: 10vh;
-}
-  .jobs {
-    padding-right: 3vw;
-    padding-left: 35vw; 
-    text-align: right;
-  }
-
-.info {
-  font-size: .7em; 
-  text-align: left; 
-  color-white; 
-  padding-top: 2vh; 
-  padding-left: 3vw; 
-  padding-bottom: 10vh;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.top-screen{
-  text-align: left;
-  background: #000000;
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 10vh;
-  color: white;
-  font-size: 3.5em;
-}
-.square_1 {
-  margin-top:6vh;
-  margin-left: 3vw;
-  width: 62vw;
-  height: 10vh;
-  background-color: white;
-  display: inline-block;
-  color: black;
-  vertical-align: bottom;
-  text-align: left;
-    }
-    
-.square_2 {
-  margin-top: 2vh;
-  margin-right: 3vw;
-  float: right;
-  width: 62vw;
-  height: 10vh;
-  background-color: black;
-  display: inline-block;
-  color: black;
-    }
-
-nav ul {
-  text-align: right;
-  position: fixed;
-  width: 100%;
-  background-color: #000000;
-}
-
-nav li {
-  margin: 25px;
-  margin-bottom: 15px;
-  padding-right: 3vw;
-  display: inline-block;
-  font-size: 2em;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  color: grey;
-}
-.work {
-  background-color: white;
-  padding-top: 10vh;
-  color: #000;
-  text-align: left;
-  height: 100%;
-}
-.work-header {
-  font-size: 7em;
-  text-align: right;
-}
-.contact {
-  background: #000;
-  color: white;
-  height: 100%;
-  min-height: 100vh;
-  padding-top: 10vh;
-}
-
-.contact a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  color: grey;
-}
-
-.contact-header {
-  text-align: left;
-  font-color: white;
-  font-size: 3.5em;
-}
-
-.business-name{
-  font-size: 2em;
-  color: grey;
-    }
-  .link-style{
-  text-decoration: none;
-  color: steelblue;
-    }
-  .cv {
-    padding: .3rem;
-    border: .2em solid #000;
-    text-decoration: none;
-    background: black;
-    color: white;
-  }
-  .cv a:hover {
-      color: grey;
-    }
-@media only screen and (max-width: 800px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-  .work-header{
-    font-size: 3.5rem;
-  }
-  .top-header {
-    padding-left: 10vw;
-  }
-  .info {
-    font-size: 1.9rem;
-  }
-  nav ul {
-    text-align: center;
-  }
-  nav ul li {
-    font-size: 1.5em;
-  }
-  .project {
-    margin: 40px 0;
-  }
-  p {
-  text-align: justify;
-  text-align-last: right;
-  padding: 0 3vw 0 35vw;
-  padding-top: 12vh;
-  font-size: 1.2em;
-}
-  .business-name {
-    font-size: 1.5em;
-  }
-}
-</style>
-  
+<html lang="en">
 <head>
-<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-<title>.Chris Sykora.</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chris Sykora · Senior Game Producer</title>
+<meta name="description" content="Berlin-based senior game producer. I join game teams as an embedded senior producer for co-dev, project rescue, production tune-ups and coaching.">
+<meta property="og:title" content="Chris Sykora · Senior Game Producer">
+<meta property="og:description" content="Senior production when you need it. Embedded producer for game studios, Berlin-based, working across Europe.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/chris-sykora.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/archivo-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script>
+(function () {
+  var d = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    d.classList.add('cs-armed');
+    // Safety net: if the main script fails to load, show everything
+    setTimeout(function () { if (!window.__csReady) d.classList.remove('cs-armed'); }, 3000);
+  }
+})();
+</script>
+<script src="assets/site.js" defer></script>
 </head>
 <body>
-  <script>
- document.body.classList.add('fade');
-</script>
-  <nav>
-  <ul id='navbar'>
-    <li><a href="#who"><i class="far fa-user"></i></a></li>
-    <li><a href="#what"><i class="far fa-file"></i></a></li>
-    <li><a href="#where"><i class="far fa-envelope"></i></a>
-    </li>
-  </ul>
+
+<header class="site-header cs-intro-fade">
+<div class="site-header__inner">
+<a href="#who" class="brand">.CS.</a>
+<nav aria-label="Main" class="site-nav">
+<a class="nav-link" href="#what">Services</a>
+<a class="nav-link" href="#games">Games</a>
+<a class="nav-link" href="#work">Work</a>
+<a class="nav-link" href="#about">About</a>
+<a class="nav-cta" href="https://calendar.app.google/HBy6owoXQrUs1M6C7" target="_blank" rel="noopener">Book a call</a>
 </nav>
-<div id="body">
-  <!--INTRO-->
-<div id="who" class="top-screen">
+</div>
+</header>
 
-  <h1 class="top-header">.Chris Sykora.</h1>
-  <span class="square_1"></span>
-  <div class="info hideme">Senior Producer<br>CSPO<br>CSM</div>
+<div id="page" style="background: #FFFFFF; color: #000000">
+
+<section id="who" class="hero" style="background: #000000; color: #FFFFFF; display: flex; flex-direction: column; overflow: hidden; padding-top: 80px">
+<div style="flex: 1 0 auto; width: 100%; max-width: 1240px; margin: 0 auto; padding: 48px 32px; display: flex; flex-direction: column; justify-content: center">
+<div class="cs-hero-out">
+<h1 class="cs-intro-l" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(56px, 9vw, 132px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em">.Chris Sykora.</h1>
+<div aria-hidden="true" class="cs-intro-wipe" style="margin-top: 36px; width: 822px; max-width: 100%; height: 48px; background: #FFFFFF"></div>
+<div style="display: flex; flex-direction: column; gap: 24px; padding-top: 44px; max-width: 680px">
+<p class="cs-intro-up cs-d1" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Senior production when you need it.</p>
+<p class="cs-intro-up cs-d2" style="margin: 0; font-size: 19px; line-height: 1.6; color: #CFCFCF; max-width: 600px">I join game teams as an embedded senior producer, for a few weeks or as long as you need. Co-dev, project rescue, cross-functional team management and getting work shipped.</p>
+<div class="cs-intro-up cs-d3" style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px">
+<a href="https://calendar.app.google/HBy6owoXQrUs1M6C7" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 50px; padding: 12px 24px; background: #FFFFFF; color: #000000; font-weight: 600; text-decoration: none">Book a 20-min call</a>
+<a href="#what" style="display: inline-flex; align-items: center; min-height: 50px; padding: 12px 24px; border: 2px solid #FFFFFF; font-weight: 600; text-decoration: none">See services</a>
+</div>
+</div>
+</div>
+</div>
+<div class="cs-intro-fade" style="display: flex; justify-content: center; padding: 0 32px 28px">
+<a href="#what" aria-label="Scroll to services" style="width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center; color: #FFFFFF; text-decoration: none">
+<svg class="cs-bob" aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 9l7 7 7-7"></path></svg>
+</a>
+</div>
+</section>
+
+<section id="what" style="overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 128px 32px">
+<h2 class="cs-r" style="margin: 0; text-align: right; font-family: 'Archivo', sans-serif; font-size: clamp(56px, 9vw, 132px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em">.Services.</h2>
+<div aria-hidden="true" class="cs-wipe-r" style="margin: 36px 0 0 auto; width: 62%; height: 48px; background: #000000"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 48px; padding-top: 72px">
+<div aria-hidden="true" style="flex: 1 1 220px; max-width: 34%"></div>
+<div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
+<p class="cs-r" style="margin: 0; font-size: 21px; line-height: 1.5; max-width: 620px">Five ways to bring in senior production, from a two-week tune-up to months embedded in your team.</p>
+<ol class="cs-stagger" style="list-style: none; margin: 0; padding: 0; border-bottom: 2px solid #000000">
+<li class="cs-r" style="border-top: 2px solid #000000; padding: 28px 0; display: flex; flex-wrap: wrap; gap: 8px 28px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; width: 40px">01</span>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em">Embedded Senior Producer</h3>
+<p style="margin: 0; color: #3D3D3D; font-size: 17px; line-height: 1.6">Join your senior team for weeks or months. Cover leave or a hiring gap, or add senior weight for a milestone.</p>
+<p style="margin: 0; color: #5A5A5A; font-size: 15px"><strong style="color: #000000">Good for:</strong> studios short a senior producer.</p>
+</div>
+</li>
+<li class="cs-r" style="border-top: 2px solid #000000; padding: 28px 0; display: flex; flex-wrap: wrap; gap: 8px 28px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; width: 40px">02</span>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em">Project Rescue</h3>
+<p style="margin: 0; color: #3D3D3D; font-size: 17px; line-height: 1.6">Work out what's off track, cut scope, restructure the team and get it shipping again.</p>
+<p style="margin: 0; color: #5A5A5A; font-size: 15px"><strong style="color: #000000">Good for:</strong> projects heading for a missed date.</p>
+</div>
+</li>
+<li class="cs-r" style="border-top: 2px solid #000000; padding: 28px 0; display: flex; flex-wrap: wrap; gap: 8px 28px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; width: 40px">03</span>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em">Co-dev &amp; Partner Management</h3>
+<p style="margin: 0; color: #3D3D3D; font-size: 17px; line-height: 1.6">Run external teams, outsourcers and vendors so they deliver what you actually need, on time.</p>
+<p style="margin: 0; color: #5A5A5A; font-size: 15px"><strong style="color: #000000">Good for:</strong> studios working with co-dev partners or outsourcing.</p>
+</div>
+</li>
+<li class="cs-r" style="border-top: 2px solid #000000; padding: 28px 0; display: flex; flex-wrap: wrap; gap: 8px 28px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; width: 40px">04</span>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em">Production Tune-Up</h3>
+<p style="margin: 0; color: #3D3D3D; font-size: 17px; line-height: 1.6">A health check of how your team plans, tracks and ships, to find where work stalls. Then I set up or tune the systems that keep it moving.</p>
+<p style="margin: 0; color: #5A5A5A; font-size: 15px"><strong style="color: #000000">Good for:</strong> teams whose releases keep slipping, or studios that have outgrown how they work.</p>
+</div>
+</li>
+<li class="cs-r" style="border-top: 2px solid #000000; padding: 28px 0; display: flex; flex-wrap: wrap; gap: 8px 28px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; width: 40px">05</span>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em">Coaching &amp; Workshops</h3>
+<p style="margin: 0; color: #3D3D3D; font-size: 17px; line-height: 1.6">Mentoring for producers and new leads. Kickoffs and planning resets for whole teams.</p>
+<p style="margin: 0; color: #5A5A5A; font-size: 15px"><strong style="color: #000000">Good for:</strong> studios growing their production team.</p>
+</div>
+</li>
+</ol>
+<p class="cs-r" style="margin: 0; font-size: 17px">Not sure which fits? <a href="#where" style="color: #36648B; font-weight: 600">Tell me what's stuck</a> and I'll suggest where to start.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="games" style="background: #000000; color: #FFFFFF; overflow: hidden; padding-bottom: 128px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 128px 32px 0">
+<h2 class="cs-l" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(56px, 9vw, 132px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em">.Games.</h2>
+<div aria-hidden="true" class="cs-wipe-l" style="margin-top: 36px; width: 62%; height: 48px; background: #FFFFFF"></div>
+</div>
+
+<div class="cs-l" data-carousel style="position: relative; margin-top: 72px">
+<div style="overflow: hidden; overflow: clip; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000000 4%, #000000 96%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000000 4%, #000000 96%, transparent 100%)">
+<ul data-track aria-label="Games I have worked on" style="list-style: none; margin: 0; padding: 0 0 8px; display: flex; gap: 24px; will-change: transform">
+
+<li style="flex: 0 0 min(560px, 84vw)">
+<figure class="cs-gfig" tabindex="0" style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #1C1C1C; border: 1px solid #333333">
+<img class="cs-gimg" src="assets/img/games/dune-awakening.jpg" alt="Dune: Awakening key art" width="1120" height="630" decoding="async" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="cs-ginfo" style="position: absolute; inset: 0; padding: 28px 88px 28px 28px; background: rgba(0, 0, 0, 0.86); display: flex; flex-direction: column; justify-content: flex-end; gap: 10px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9A9A9A">Funcom · PC</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Ran co-dev feature teams at YAGER, then Senior Technical Producer at Abstraction for the global launch.</p>
+</div>
+</div>
+<figcaption class="cs-gtitle"><h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em">Dune: Awakening</h3></figcaption>
+</figure>
+</li>
+
+<li style="flex: 0 0 min(560px, 84vw)">
+<figure class="cs-gfig" tabindex="0" style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #1C1C1C; border: 1px solid #333333">
+<img class="cs-gimg" src="assets/img/games/the-cycle.jpg" alt="The Cycle key art" width="1120" height="630" decoding="async" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="cs-ginfo" style="position: absolute; inset: 0; padding: 28px 88px 28px 28px; background: rgba(0, 0, 0, 0.86); display: flex; flex-direction: column; justify-content: flex-end; gap: 10px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9A9A9A">YAGER · PC · Epic Games Store</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Associate Producer through 2 seasons of Early Access. Improved parts of the character, controls and camera.</p>
+</div>
+</div>
+<figcaption class="cs-gtitle"><h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em">The Cycle</h3></figcaption>
+</figure>
+</li>
+
+<li style="flex: 0 0 min(560px, 84vw)">
+<figure class="cs-gfig" tabindex="0" style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #1C1C1C; border: 1px solid #333333">
+<img class="cs-gimg" src="assets/img/games/cycle-frontier.jpg" alt="The Cycle: Frontier key art" width="1120" height="630" decoding="async" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="cs-ginfo" style="position: absolute; inset: 0; padding: 28px 88px 28px 28px; background: rgba(0, 0, 0, 0.86); display: flex; flex-direction: column; justify-content: flex-end; gap: 10px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9A9A9A">YAGER · PC</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Producer across all 3 seasons, from launch to the final season. Ran gameplay feature teams covering weapons, movement and creatures, plus outsourcing.</p>
+</div>
+</div>
+<figcaption class="cs-gtitle"><h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em">The Cycle: Frontier</h3></figcaption>
+</figure>
+</li>
+
+<li style="flex: 0 0 min(560px, 84vw)">
+<figure class="cs-gfig" tabindex="0" style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #1C1C1C; border: 1px solid #333333">
+<img class="cs-gimg" src="assets/img/games/exoborne.jpg" alt="Exoborne key art" width="1024" height="576" decoding="async" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="cs-ginfo" style="position: absolute; inset: 0; padding: 28px 88px 28px 28px; background: rgba(0, 0, 0, 0.86); display: flex; flex-direction: column; justify-content: flex-end; gap: 10px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9A9A9A">Sharkmob · PC, PS5, Xbox</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Ran co-dev feature teams at YAGER.</p>
+</div>
+</div>
+<figcaption class="cs-gtitle"><h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em">Exoborne</h3></figcaption>
+</figure>
+</li>
+
+<li style="flex: 0 0 min(560px, 84vw)">
+<figure class="cs-gfig" tabindex="0" style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #1C1C1C; border: 1px solid #333333">
+<img class="cs-gimg" src="assets/img/games/seed.jpg" alt="SEED key art" width="747" height="420" decoding="async" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="cs-ginfo" style="position: absolute; inset: 0; padding: 28px 88px 28px 28px; background: rgba(0, 0, 0, 0.86); display: flex; flex-direction: column; justify-content: flex-end; gap: 10px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9A9A9A">KLANG Games · PC, iOS, Android</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Took the game to soft launch.</p>
+</div>
+</div>
+<figcaption class="cs-gtitle"><h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em">SEED</h3></figcaption>
+</figure>
+</li>
+
+<li style="flex: 0 0 min(560px, 84vw)">
+<figure class="cs-gfig" tabindex="0" style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #1C1C1C; border: 1px solid #333333">
+<img class="cs-gimg" src="assets/img/games/wows-blitz.jpg" alt="World of Warships: Blitz key art" width="1120" height="630" decoding="async" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="cs-ginfo" style="position: absolute; inset: 0; padding: 28px 88px 28px 28px; background: rgba(0, 0, 0, 0.86); display: flex; flex-direction: column; justify-content: flex-end; gap: 10px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9A9A9A">Wargaming · iOS, Android</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Project Manager in Nicosia and Shanghai.</p>
+</div>
+</div>
+<figcaption class="cs-gtitle"><h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em">World of Warships: Blitz</h3></figcaption>
+</figure>
+</li>
+
+<li style="flex: 0 0 min(560px, 84vw)">
+<figure class="cs-gfig" tabindex="0" style="margin: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #1C1C1C; border: 1px solid #333333">
+<img class="cs-gimg" src="assets/img/games/star-trek-online.jpg" alt="Star Trek Online key art" width="921" height="518" decoding="async" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="cs-ginfo" style="position: absolute; inset: 0; padding: 28px 88px 28px 28px; background: rgba(0, 0, 0, 0.86); display: flex; flex-direction: column; justify-content: flex-end; gap: 10px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9A9A9A">Cryptic Studios · PC</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Development QA. Where it started.</p>
+</div>
+</div>
+<figcaption class="cs-gtitle"><h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em">Star Trek Online</h3></figcaption>
+</figure>
+</li>
+
+</ul>
+</div>
+<div style="position: absolute; left: 0; right: 0; top: 0; height: calc(min(560px, 84vw) * 0.5625); padding: 0 max(16px, calc((100% - 1240px) / 2)); display: flex; align-items: center; justify-content: space-between; pointer-events: none">
+<button type="button" class="cs-btn" data-prev aria-label="Previous game" style="pointer-events: auto; width: 56px; height: 56px; padding: 0; border: 2px solid #FFFFFF; background-color: rgba(0, 0, 0, 0.65); color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M15 4l-8 8 8 8"></path></svg>
+</button>
+<button type="button" class="cs-btn" data-next aria-label="Next game" style="pointer-events: auto; width: 56px; height: 56px; padding: 0; border: 2px solid #FFFFFF; background-color: rgba(0, 0, 0, 0.65); color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M9 4l8 8-8 8"></path></svg>
+</button>
+</div>
+</div>
+</section>
+
+<section id="work" style="overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 128px 32px 96px">
+<h2 class="cs-r" style="margin: 0; text-align: right; font-family: 'Archivo', sans-serif; font-size: clamp(56px, 9vw, 132px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em">.Work.</h2>
+<div aria-hidden="true" class="cs-wipe-r" style="margin: 36px 0 0 auto; width: 62%; height: 48px; background: #000000"></div>
+<div class="cs-stagger" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 40px 28px; padding-top: 72px">
+
+<article class="cs-r" style="border-top: 6px solid #000000; padding-top: 24px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 34px; line-height: 1.05; font-weight: 900; letter-spacing: -0.02em">Mixed → Mostly Positive</p>
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A5A5A">The Cycle: Frontier · YAGER</p>
+<h3 style="margin: 0; font-size: 20px; line-height: 1.3; font-weight: 600">Shipping the final season with a third of the team</h3>
+<p style="margin: 0; color: #3D3D3D; line-height: 1.6">Most of the studio moved to co-dev projects, which left about 30 of 100 developers for the last season. I split them into small strike teams, cut scope down to what players valued most, and moved trailers, music, animation and art to outsourcing partners. We shipped on schedule.</p>
+</article>
+
+<article class="cs-r" style="border-top: 6px solid #000000; padding-top: 24px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 34px; line-height: 1.05; font-weight: 900; letter-spacing: -0.02em">Days → hours</p>
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A5A5A">SEED · KLANG Games</p>
+<h3 style="margin: 0; font-size: 20px; line-height: 1.3; font-weight: 600">Cutting release delays</h3>
+<p style="margin: 0; color: #3D3D3D; line-height: 1.6">Releases were running days late. Working with a data analyst, I went through the studio's Jira and pull request history, found four patterns behind the delays, and set up an early-warning dashboard and a risk register.</p>
+</article>
+
+<article class="cs-r" style="border-top: 6px solid #000000; padding-top: 24px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 34px; line-height: 1.05; font-weight: 900; letter-spacing: -0.02em">6 promotions</p>
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A5A5A">YAGER · Direct reports</p>
+<h3 style="margin: 0; font-size: 20px; line-height: 1.3; font-weight: 600">Growing people, not just teams</h3>
+<p style="margin: 0; color: #3D3D3D; line-height: 1.6">At peak, I managed about 20 people across three teams. Beyond the day-to-day work, I sharpened their soft skills with a personal touch and pushed them to grow as people, not just in their roles.</p>
+</article>
 
 </div>
-  
-  
-  <!--EXPERIENCE-->
-<div id="what" class="work">
-  <h1 class="work-header">.Experience.</h1>
-  <br>
-  <span class="square_2"></span>
-<br>
-  <br>
-  <a>
-    <p>Experienced Senior Producer with 6+ years spanning the entire dev/prod lifecycle and co-development, specializing in global game development, leading international teams creating diverse F2P AA and AAA PC, console, and mobile titles. Skilled in agile methodologies, servant leadership, and strategic planning. Demonstrated success in project coordination and data-driven optimizations, with a background in project management scaling production and my impact as a leader
-</a><br><br> 
-      Projects: Star Trek Online (PC), World of Warships: Blitz (iOS, Android), The Cycle (PC), The Cycle: Frontier (PC), Dune: Awakening (PC), Exoborne (PC, PS5, Xbox), Unannounced project (PC, PS5, Xbox), SEED (PC, iOS, Android)<br><br>
-      <a href="https://drive.google.com/file/d/1h2d1fAFNYoDSPfVaHjLJQTmo92a5hDTf/view?usp=sharing" class="cv" target=”_blank”>Download CV</a><br><br>
-      <div class="jobs">
-      <a class="business-name">KLANG</a><br>
-      Senior Live Ops Producer / 2025<br>
-      Berlin, Germany<br><br>
-      <a class="business-name">Abstraction</a><br>
-      Senior Technical Producer / 2025<br>
-      Berlin, Germany<br><br>
-      <a class="business-name">YAGER</a><br>
-      Senior Producer / 2023 - Present<br>
-      Producer / 2021-2023<br>
-      Associate Producer / 2019-2021<br>
-      Berlin, Germany<br><br>
-      <a class="business-name">Wargaming</a><br>
-      Project Manager / 2017-2018<br>
-      Nicosia, Cyprus<br>
-      Shanghai, China<br><br>
-      <a class="business-name">Epsilon</a><br>
-      Project Manager / 2016-2017<br>
-      San Francisco, CA<br><br>
-      <a class="business-name">Accenture</a><br>
-      Digital Project Manager / 2014-2016<br>
-      San Francisco, CA<br><br>
-      <a class="business-name">Oracle</a><br>
-Production Lead / 2012 - 2015 <br>
-       San Francisco, CA<br><br>
-      <a class="business-name">Cryptic</a><br>
-      Development QA / 2011-2012<br>
-        Los Gatos, CA <br><br>
-      <a class="business-name">Podcasts</a><br>
-      <a class="link-style" href="https://evolutionjobs.com/exchange/evo-gaming-164-guiding-game-development-as-a-leader/?preview=true&_thumbnail_id=21937" target=”_blank”>Guiding Game Development As A Leader</a><br>
-      <a class="link-style" href="https://youtu.be/ktWeNvnLIoA" target=”_blank”>The Cycle: Frontier Closed Beta 1</a><br>
-      <a class="link-style" href="https://youtu.be/_A9aSZ5aQHM" target=”_blank”>The Cycle: Frontier Closed Beta 2</a><br>
-      <a class="link-style" href="https://www.game-production.com/podcast/episode/4b06ed2e/24-game-production-interviews-chris-sykora-associate-producer-at-yager" target=”_blank”>Game Production Podcast</a><br><br></div>
-  </div>
-  </div>
-  <!--CONTACT-->
-<div id="where" class="contact smooth">
-  <div class="contact-header">
-    <h1>.Contact.</h1>
-<span class="square_1"></span>
-    <br>
-    <div class="info">
-      <a href="mailto:csykora@gmail.com">csykora@gmail.com</a><br>
-      <a href="tel:+491775059608">+49.177.505.9608</a><br>
-      <a href="https://www.linkedin.com/in/chris-sykora-53b9baa/" target=”_blank”>LinkedIn</a>
-    <br><br>
-      <p style="font-size: 15px;">&copy; Created by myself</p>
-    </div>
-  </div>
- 
+
+<!-- Recommendations: switched off until the quotes are ready. Delete this comment's opening and closing markers to show it.
+<div style="padding-top: 112px">
+<h2 class="cs-l" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(40px, 5vw, 72px); line-height: 0.95; font-weight: 900; letter-spacing: -0.035em">.What people say.</h2>
+<div class="cs-stagger" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 24px; padding-top: 48px">
+<figure class="cs-up" style="margin: 0; border: 2px solid #000000; padding: 30px; display: flex; flex-direction: column; gap: 18px">
+<span aria-hidden="true" style="font-family: 'Archivo', sans-serif; font-size: 64px; line-height: 0.5; font-weight: 900; color: #4682B4">“</span>
+<blockquote style="margin: 0; font-size: 19px; line-height: 1.55">[Quote]</blockquote>
+<figcaption style="font-size: 14px; color: #5A5A5A">[Name, role, studio]</figcaption>
+</figure>
 </div>
-  </div>
-  <script>
-  document.addEventListener("DOMContentLoaded", function(e) {
-    document.body.classList.remove('fade');
-  });
-</script>
+</div>
+-->
+</div>
+</section>
+
+<section style="background: #000000; color: #FFFFFF; overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 128px 32px">
+<h2 class="cs-l" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(48px, 7.5vw, 112px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em">.How it works.</h2>
+<div aria-hidden="true" class="cs-wipe-l" style="margin-top: 36px; width: 62%; height: 48px; background: #FFFFFF"></div>
+<div class="cs-stagger" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 40px; padding-top: 72px">
+<div class="cs-l" style="display: flex; flex-direction: column; gap: 10px; padding-top: 22px; border-top: 2px solid #FFFFFF">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 26px; font-weight: 800">Short stint</h3>
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #9A9A9A">2–8 weeks</p>
+<p style="margin: 0; color: #CFCFCF; line-height: 1.6">A milestone push, a project rescue or a production tune-up.</p>
+</div>
+<div class="cs-l" style="display: flex; flex-direction: column; gap: 10px; padding-top: 22px; border-top: 2px solid #FFFFFF">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 26px; font-weight: 800">Ongoing</h3>
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #9A9A9A">Part- or full-time</p>
+<p style="margin: 0; color: #CFCFCF; line-height: 1.6">Embedded in your team for as long as you need senior cover.</p>
+</div>
+<div class="cs-l" style="display: flex; flex-direction: column; gap: 10px; padding-top: 22px; border-top: 2px solid #FFFFFF">
+<h3 style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 26px; font-weight: 800">One-off</h3>
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #9A9A9A">Workshop or planning reset</p>
+<p style="margin: 0; color: #CFCFCF; line-height: 1.6">Focused sessions to kick off a project, align a team or reset a plan.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" style="overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 128px 32px">
+<h2 class="cs-r" style="margin: 0; text-align: right; font-family: 'Archivo', sans-serif; font-size: clamp(56px, 9vw, 132px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em">.About.</h2>
+<div aria-hidden="true" class="cs-wipe-r" style="margin: 36px 0 0 auto; width: 62%; height: 48px; background: #000000"></div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 48px; padding-top: 72px">
+<div class="cs-clip" style="flex: 1 1 260px; max-width: 34%; min-width: 220px; aspect-ratio: 4 / 5; overflow: hidden; background: #111111">
+<img class="cs-zoom" src="assets/img/chris-sykora.jpg" alt="Chris Sykora" width="1000" height="1250" loading="lazy" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
+</div>
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p class="cs-r" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; font-weight: 800; letter-spacing: -0.015em">Senior game producer with 7 years in games and 12+ overall in games and tech.</p>
+<p class="cs-r" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3D3D3D">I've run co-dev teams for Sharkmob (Exoborne) and Funcom (Dune: Awakening), shipped the final season of The Cycle: Frontier, and taken SEED to soft launch. I started in games QA at Cryptic Studios on Star Trek Online, then spent several years in tech in San Francisco: Production Lead at Oracle, then project management at Accenture and Epsilon.</p>
+<p class="cs-r" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3D3D3D">Based in Berlin since 2017, working with teams across Europe.</p>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 64px 48px; padding-top: 96px">
+<div style="flex: 3 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<h3 class="cs-l" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 36px; line-height: 1; font-weight: 900; letter-spacing: -0.03em">.Experience.</h3>
+<ul class="cs-stagger" style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #000000">
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">KLANG Games</strong> <span style="color: #3D3D3D">· Senior Live Ops Producer</span></span><span style="color: #5A5A5A">2025 · Berlin</span></li>
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">Abstraction</strong> <span style="color: #3D3D3D">· Senior Technical Producer</span></span><span style="color: #5A5A5A">2025 · Berlin</span></li>
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">YAGER</strong> <span style="color: #3D3D3D">· Associate Producer → Producer → Senior Producer</span></span><span style="color: #5A5A5A">2019–[end year] · Berlin</span></li>
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">Wargaming</strong> <span style="color: #3D3D3D">· Project Manager</span></span><span style="color: #5A5A5A">2017–2018 · Nicosia, Shanghai</span></li>
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">Epsilon</strong> <span style="color: #3D3D3D">· Project Manager</span></span><span style="color: #5A5A5A">2016–2017 · San Francisco</span></li>
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">Accenture</strong> <span style="color: #3D3D3D">· Digital Project Manager</span></span><span style="color: #5A5A5A">2014–2016 · San Francisco</span></li>
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">Oracle</strong> <span style="color: #3D3D3D">· Production Lead</span></span><span style="color: #5A5A5A">2012–2015 · San Francisco</span></li>
+<li class="cs-l" style="border-top: 1px solid #000000; padding: 14px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px"><span><strong style="font-family: 'Archivo', sans-serif; font-size: 19px">Cryptic Studios</strong> <span style="color: #3D3D3D">· Development QA</span></span><span style="color: #5A5A5A">2011–2012 · Los Gatos</span></li>
+</ul>
+</div>
+<div style="flex: 2 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<h3 class="cs-r" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: 36px; line-height: 1; font-weight: 900; letter-spacing: -0.03em">.Talks &amp; podcasts.</h3>
+<ul class="cs-stagger" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px">
+<li class="cs-r" style="display: flex; flex-direction: column; gap: 2px"><a href="https://evolutionjobs.com/exchange/evo-gaming-164-guiding-game-development-as-a-leader/" target="_blank" rel="noopener" style="color: #36648B; font-weight: 600; font-size: 18px">Guiding Game Development As A Leader</a><span style="font-size: 14px; color: #5A5A5A">Evo Gaming podcast</span></li>
+<li class="cs-r" style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.youtube.com/watch?v=4oeaHyIAsrg" target="_blank" rel="noopener" style="color: #36648B; font-weight: 600; font-size: 18px">Game Production Interviews</a><span style="font-size: 14px; color: #5A5A5A">Game Production Podcast</span></li>
+<li class="cs-r" style="display: flex; flex-direction: column; gap: 2px"><a href="https://youtu.be/ktWeNvnLIoA" target="_blank" rel="noopener" style="color: #36648B; font-weight: 600; font-size: 18px">The Cycle: Frontier Closed Beta 1</a><span style="font-size: 14px; color: #5A5A5A">Video</span></li>
+<li class="cs-r" style="display: flex; flex-direction: column; gap: 2px"><a href="https://youtu.be/_A9aSZ5aQHM" target="_blank" rel="noopener" style="color: #36648B; font-weight: 600; font-size: 18px">The Cycle: Frontier Closed Beta 2</a><span style="font-size: 14px; color: #5A5A5A">Video</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="where" style="background: #000000; color: #FFFFFF; overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 128px 32px 96px">
+<h2 class="cs-l" style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(56px, 9vw, 132px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em">.Contact.</h2>
+<div aria-hidden="true" class="cs-wipe-l" style="margin-top: 36px; width: 62%; height: 64px; background: #FFFFFF"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px 48px; padding-top: 56px">
+<div class="cs-l" style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-family: 'Archivo', sans-serif; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Have a project that needs a producer?</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #CFCFCF; max-width: 560px">Tell me what's going on and we'll find a time to talk.</p>
+<div style="padding-top: 4px"><a href="https://calendar.app.google/HBy6owoXQrUs1M6C7" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 50px; padding: 12px 24px; background: #FFFFFF; color: #000000; font-weight: 600; text-decoration: none">Book a 20-min call</a></div>
+</div>
+<ul class="cs-r" style="flex: 1 1 260px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 20px">
+<li><a href="mailto:csykora@gmail.com" style="text-decoration: none">csykora@gmail.com</a></li>
+<li><a href="https://www.linkedin.com/in/chris-sykora-53b9baa/" target="_blank" rel="noopener" style="text-decoration: none">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<footer class="cs-up" style="border-top: 1px solid #333333">
+<div style="max-width: 1240px; margin: 0 auto; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; font-size: 14px; color: #9A9A9A">
+<span>© 2026 Chris Sykora · Created by myself</span>
+</div>
+</footer>
+</section>
+
+</div>
 </body>
 </html>
